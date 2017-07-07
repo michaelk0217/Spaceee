@@ -345,6 +345,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         meteorScore += 1
         
         scoreLabel.text = "\(meteorScore)"
+        
+        explodeMeteor(meteor: meteor)
+        
     }
     
     func heroHitMeteor(player:SKSpriteNode, meteor: Enemy){
@@ -375,7 +378,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             explosion.color = UIColor.orange
             explosion.size = CGSize(width:3, height: 3)
-            explosion.position = CGPoint(x: 0 , y: -0)
+            explosion.position = CGPoint(x: meteor.position.x , y: meteor.position.y)
             
             let moveExplosion: SKAction
             
