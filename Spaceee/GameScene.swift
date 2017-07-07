@@ -370,11 +370,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let explosions: [SKSpriteNode] = [SKSpriteNode(), SKSpriteNode(), SKSpriteNode(), SKSpriteNode(), SKSpriteNode()]
         
         for explosion in explosions {
-            let random = GKRandomDistribution(lowestValue: 0, highestValue: 1000)
-            let randomxy = random.nextInt()
+            let random1 = GKRandomDistribution(lowestValue: 0, highestValue: 1000)
+            let randomx = random1.nextInt()
             
-            let randomExplosionX = (randomxy)
-            let randomExplosionY = (randomxy)
+            let random2 = GKRandomDistribution(lowestValue: 0, highestValue: 1000)
+            let randomy = random2.nextInt()
+            
+            let randomExplosionX = (randomx)
+            let randomExplosionY = (randomy)
             
             explosion.color = UIColor.orange
             explosion.size = CGSize(width:3, height: 3)
